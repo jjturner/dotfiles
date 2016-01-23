@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
 Plugin 'othree/html5.vim'
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
@@ -63,4 +64,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " escape remap
-inoremap jj <Esc>
+" inoremap jj <Esc> "can use native C-c, but may revisit this
+
+let mapleader = ","
+
+nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>so :source $MYVIMRC<cr>
+
+

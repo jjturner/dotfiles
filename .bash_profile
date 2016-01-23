@@ -1,6 +1,9 @@
 print_before_the_prompt () {
-  printf "\n $txtred%s: $bldgrn%s $txtpur%s\n$txtrst" "$USER" "${PWD/#$HOME/~}" "$(vcprompt)"
+  printf "\n $txtred%s: $testcol%s $txtpur%s\n$txtrst" "$USER" "${PWD/#$HOME/~}" "$(vcprompt)"
 }
+if [ -f ~/.git-completion.bash ]; then
+	. ~/.git-completion.bash
+fi
 export PATH=~/bin:$PATH
 export PATH="/library/postgresql/9.4/bin:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -8,12 +11,15 @@ alias tw=/Appplications/TextWrangler.app/Contents/MacOS/TextWrangler
 export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+export TERM=screen-256color-bce
 export PGDATA="/Library/PostgreSQL/9.4/data"
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 PROMPT_COMMAND=print_before_the_prompt
-PS1='\e[0;37m •-» \e[0m'
+PS1='\[\e[0;37m\] •-» \[\e[0m\]'
 
+# 38;5 is foreground, 48;5 is background
+testcol='\e[38;5;94m' # 94 is a 255 color setting
 txtblk='\e[0;30m' # Black - Regular
 txtred='\e[0;31m' # Red
 txtgrn='\e[0;32m' # Green

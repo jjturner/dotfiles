@@ -1,0 +1,2 @@
+# ignore buffer files from vim
+*.swp
