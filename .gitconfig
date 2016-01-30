@@ -1,0 +1,13 @@
+[user]
+	name = John Turner
+	email = fenwayriffs@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+[alias]
+	sla = log --oneline --decorate --graph --all
+	glog = log -E -i --grep
+	unstage = reset
+	ci = commit
+	st = status
+	br = branch
+	co = checkout
