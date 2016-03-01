@@ -14,4 +14,4 @@ alias vi='/usr/local/bin/vim'
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Path to user-installed Vim
-# export PATH="/usr/local/bin/vim:$PATH"
+export PATH="/usr/local/bin/vim:$PATH"

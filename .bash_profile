@@ -13,6 +13,7 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export TERM=screen-256color-bce
 export PGDATA="/Library/PostgreSQL/9.4/data"
+export EDITOR=vim
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 PROMPT_COMMAND=print_before_the_prompt

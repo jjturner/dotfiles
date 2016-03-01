@@ -7,7 +7,10 @@
 	sla = log --oneline --decorate --graph --all
 	glog = log -E -i --grep
 	unstage = reset
+	uncommit = reset --soft HEAD^
 	ci = commit
 	st = status
 	br = branch
 	co = checkout
+	# car: commit amend reuse
+	car = commit --amend --no-edit

@@ -72,3 +72,4 @@ nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 
 
+set clipboard=unnamed
