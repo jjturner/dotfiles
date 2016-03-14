@@ -16,6 +16,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'othree/html5.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'jgdavey/tslime.vim'
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
 
@@ -50,6 +53,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" following command invokes a send_to_tmux call
+" (good for TDD)
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+
 set number
 " set nocompatible
 syntax on
@@ -68,8 +75,16 @@ nnoremap <C-l> <C-w>l
 
 let mapleader = ","
 
+" RSpec integration
+map <leader>t :call RunCurrentSpecFile()<CR>
+map <leader>s :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunAllSpecs()<CR>
+
+
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 
-
-set clipboard=unnamed
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
