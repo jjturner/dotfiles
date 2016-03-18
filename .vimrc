@@ -88,3 +88,13 @@ nmap <leader>so :source $MYVIMRC<cr>
 if $TMUX == ''
   set clipboard+=unnamed
 endif
+
+" combine relative line numbers with fixed nbr at cursor
+set number
+set relativenumber
+" toggle relative number on/off for normal/insert modes respectively
+autocmd InsertEnter * :set number norelativenumber
+autocmd InsertLeave * :set relativenumber
+
+" set default colorscheme
+colorscheme made_of_code
