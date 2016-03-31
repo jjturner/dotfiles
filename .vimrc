@@ -19,6 +19,9 @@ Plugin 'othree/html5.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'jgdavey/tslime.vim'
+Plugin 'lifepillar/pgsql.vim'
+Plugin 'rking/ag.vim'
+
 " plugin on GitHub repo
 "Plugin 'tpope/vim-fugitive'
 

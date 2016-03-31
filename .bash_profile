@@ -1,13 +1,19 @@
 print_before_the_prompt () {
-  printf "\n $txtred%s: $testcol%s $txtpur%s\n$txtrst" "$USER" "${PWD/#$HOME/~}" "$(vcprompt)"
+  printf "\n $txtred%s: $testcol%s $txtpur%s\n$txtrst" "$USER" "${PWD/#$HOME/~}" "$(vcprompt -f [%n:%b%u%m])"
 }
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+	source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" 
+fi
 if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
 fi
 export PATH=~/bin:$PATH
 export PATH="/library/postgresql/9.4/bin:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-alias tw=/Appplications/TextWrangler.app/Contents/MacOS/TextWrangler
+
+# removing this alias - TextWrangler is too heavyweight.  Vim is my goto editor.
+# alias tw=/Appplications/TextWrangler.app/Contents/MacOS/TextWrangler
+
 export PATH=/usr/local/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
